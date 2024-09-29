@@ -5,6 +5,7 @@
 import React from 'react';
 import Popup from './components/Popup'; // Adjust the path if necessary
 import './App.css'; // This includes any global styles
+import './index.css';
 
 function App() {
 	return (

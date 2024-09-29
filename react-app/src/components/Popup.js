@@ -42,31 +42,39 @@ const Popup = () => {
 	};
 
 	return (
-		<div className='container'>
-			<div className='title'>Your bookmarks for this video</div>
-			<div className='bookmarks'>
+		<div className='p-6 w-72 bg-gray-100 rounded-lg shadow-lg container'>
+			<div className='text-lg font-bold mb-4 text-gray-700 title'>
+				Your bookmarks for this video
+			</div>
+			<div className='space-y-4 bookmarks rounded-lg'>
 				{bookmarks.length > 0 ? (
 					bookmarks.map((bookmark, idx) => (
 						<div
 							key={idx}
-							className='bookmark'>
-							<div className='bookmark-title'>{bookmark.desc}</div>
-							<div className='bookmark-controls'>
+							className='flex items-center justify-between bg-white p-3 rounded-lg shadow bookmarks'>
+							<div className='text-sm font-medium text-gray-700'>
+								{bookmark.desc}
+							</div>
+							<div className='flex space-x-2'>
 								<img
 									src='assets/play.png'
 									onClick={() => onPlay(bookmark.time)}
+									className='w-6 h-6 cursor-pointer'
 									alt='Play'
 								/>
 								<img
 									src='assets/delete.png'
 									onClick={() => onDelete(bookmark.time)}
+									className='w-6 h-6 cursor-pointer'
 									alt='Delete'
 								/>
 							</div>
 						</div>
 					))
 				) : (
-					<i className='row'>No bookmarks to show</i>
+					<i className='block text-center text-gray-500 row pb-4'>
+						No bookmarks to show
+					</i>
 				)}
 			</div>
 		</div>
